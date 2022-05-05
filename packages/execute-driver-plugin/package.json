@@ -23,6 +23,15 @@
     "lib",
     "index.js"
   ],
+  "dependencies": {
+    "bluebird": "3.7.2",
+    "lodash": "4.17.21",
+    "vm2": "3.9.9",
+    "webdriverio": "7.19.7"
+  },
+  "peerDependencies": {
+    "appium": "file:../appium"
+  },
   "scripts": {
     "build": "babel lib --root-mode=upward --out-dir=build/lib",
     "dev": "npm run build -- --watch",
@@ -32,14 +41,6 @@
     "test": "npm run test:unit",
     "test:e2e": "mocha -t 160s --slow 20s \"./test/e2e/**/*.spec.js\"",
     "test:unit": "mocha \"./test/unit/**/*.spec.js\""
-  },
-  "dependencies": {
-    "@appium/base-plugin": "file:../base-plugin",
-    "@appium/support": "file:../support",
-    "bluebird": "3.7.2",
-    "lodash": "4.17.21",
-    "vm2": "3.9.9",
-    "webdriverio": "7.19.7"
   },
   "publishConfig": {
     "access": "public"
